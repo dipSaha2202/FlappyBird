@@ -55,6 +55,7 @@ public class MainGame extends ApplicationAdapter {
         random = new Random();
 
         points = 0;
+        gap = Gdx.graphics.getHeight() / 3.5f;
         scoringTube = 0;
         screenWidth = Gdx.graphics.getWidth();
         screenHeight = Gdx.graphics.getHeight();
@@ -64,9 +65,9 @@ public class MainGame extends ApplicationAdapter {
         topTubeHeight = topTube.getHeight();
 
         xDistanceBetweenTubes = screenWidth / 2 + gap;
-        maxTubeOffSet = screenWidth - gap * 2.5f;
-        defaultTopTubeY = (screenWidth + gap) / 2 + 100;
-        defaultBottomTubeY = screenWidth / 2 - gap / 2 - bottomTube.getHeight() + 100;
+        maxTubeOffSet = screenWidth - gap/2;
+        defaultTopTubeY = screenWidth/2 + gap ;
+        defaultBottomTubeY = (screenWidth - gap)/2 - bottomTube.getHeight()/1.2f;
 
         setNewGame();
     }
@@ -74,7 +75,7 @@ public class MainGame extends ApplicationAdapter {
     private void setNewGame() {
         birdsY = (screenHeight - birdsHeight) / 2;
         for (int i = 0; i < numberOfTubes; i++) {
-            tubeOffSet[i] = (random.nextFloat() - 0.5f) * maxTubeOffSet;
+            tubeOffSet[i] = (random.nextFloat() - 0.2f) * maxTubeOffSet;
             tubeX[i] = screenWidth + tubeWidth + i * xDistanceBetweenTubes;
 
             topTubesShapes[i] = new Rectangle();
