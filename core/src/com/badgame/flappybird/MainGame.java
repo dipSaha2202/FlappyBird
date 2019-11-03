@@ -170,7 +170,7 @@ public class MainGame extends ApplicationAdapter {
 
         batch.draw(birds[flapsState],(screenWidth - birdsWidth) / 2, birdsY);
         pointsFont.draw(batch, " Score : " + points, 20, Gdx.graphics.getHeight() - 50);
-        birdCircle.set(screenWidth / 2, birdsY + birdsHeight /2, birdsHeight / 2);
+        birdCircle.set(screenWidth / 2, birdsY + birdsHeight /2, birdsHeight / 2 - 2);
         //	shapeRenderer.circle(birdCircle.x, birdCircle.y, birdCircle.radius);
 
         for (int i = 0; i < numberOfTubes; i++) {
